@@ -1,0 +1,28 @@
+<html>  
+<head>  
+    <title>UPdateFrom</title>  
+</head>  
+<body>  
+<form method="POST">  
+        {% csrf_token %}  
+    <h3>Update Details</h3> 
+    <br><br>
+    <label>Employee FName:</label>  
+    <input type="text" name="fname" value="{{ udata.fname }}"/> 
+    <br> 
+    <label>Employee LName:</label>  
+    <input type="text" name="lname" value="{{ udata.lname }}" />   
+    <br>
+    <label>Employee Salary:</label>  
+    <input type="number" name="salary" value="{{ udata.salary }}" /> 
+    <br>
+    <label>Employee Location:</label>  
+    <input type="text" name="location" value="{{ udata.location}}"/>
+    <br>
+    <button type="submit">Update</button>  
+</form>  
+</body>  
+</html>  
+
+
+

@@ -1,0 +1,13 @@
+<html>
+<head>StudentProfileForm</head>
+<body>
+	<center>
+<form method="post">
+  {% csrf_token %}
+  {{ user_form.as_p }}
+  {{ student_profile_form.as_p }}
+  <button type="submit">Save changes</button>
+</form>
+</center>
+</body>
+</html>

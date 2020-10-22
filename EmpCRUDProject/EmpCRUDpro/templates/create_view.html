@@ -1,0 +1,29 @@
+<html>
+<head>
+	<style>
+        a,
+      table,
+      th,
+      td {
+        padding: 10px;
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+
+      body {background-color: yellow;}
+    </style> 
+     <br><br><br><br><br><br><br>
+	<titile><center>CreateEmpPage</center></titile>
+</head>
+<center>
+<body>
+<form method="POST"> 
+    {% csrf_token %}
+   
+    {{ form.as_p }}   
+    <input type="submit" value="Submit"> 
+</form>
+
+</center>
+</body>
+</html>

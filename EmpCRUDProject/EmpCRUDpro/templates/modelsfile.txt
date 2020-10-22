@@ -1,0 +1,32 @@
+from django.db import models
+class Category(models.Model):
+	Category_title = models.CharField(max_length = 50)
+
+
+class Tag(models.Model):
+	tag_title = models.CharField(max_length = 50)
+
+
+class Course(models.Model):
+	course_title = models.CharField(max_length = 100)
+	course_price = models.IntegerField()
+	course_description = models.TextField(max_length = 200)
+	course_gains = models.TextField(max_length = 200)
+	course_requirments = models.TextField(max_length = 200)
+	url_link = models.URLField(max_length = 500)
+	course_category = models.ForeignKey(Category)
+	tags = models.ManyToManyField(Tag)
+    
+class CourseCurriculum1(models.Model):
+	abc = models.ForeignKey(Course)
+	Headings = models.CharField(max_length = 500)
+
+
+class CourseCurriculum2(models.Model):
+	xyz = models.ForeignKey(CourseCurriculum1)
+	Headings= models.CharField(max_length = 500)
+	video = models.FileField()
+
+
+
+

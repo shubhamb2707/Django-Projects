@@ -1,0 +1,59 @@
+<!DOCTYPE html>  
+<html>
+<head> 
+    <style>
+        a,
+      table,
+      th,
+      td {
+        padding: 10px;
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+
+      body {background-color: yellow;}
+    </style> 
+    <meta charset="UTF-8">  
+    <title>Employee Records</title>   
+</head>  
+<body> <center>
+<table>  
+    <thead>  
+    <tr>  <br><br><br><br><br><br><br>
+
+        <th>Fname</th>
+        
+        <th>Lname</th>
+         
+        <th>Salary</th> 
+        
+        <th>Location</th>
+         
+        <th>Actions</th>  
+    </tr>  
+    </thead>  
+    <tbody>  
+{% for employeedata in data %}  
+    <tr>
+
+        <td>{{ employeedata.fname }}</td>
+         
+        <td>{{ employeedata.lname }}</td>
+         
+        <td>{{ employeedata.salary }}</td>
+        
+        <td>{{ employeedata.location }}</td>  
+        <td> 
+            <a href= '/update/{{employeedata.fname}}' >Update</a>  
+            <a href='/delete/{{employeedata.fname}}' >Delete</a>  
+        </td>  
+    </tr>  
+{% endfor %}  
+    </tbody>  
+</table>  
+<br>  
+<br>  
+<a href="/create">Add New Record</a>  
+<center/>
+</body>  
+</html>  

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block bodyblock %}
+
+<div class="jumbotron">
+    <center><h2>Teacher Registration</h2></center>
+ <div class="row">
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="card-body">
+          {% if error %}
+          {{ error }}
+          {% endif %}
+          <form method="POST" novalidate>
+              {% csrf_token %}
+              <input type="text" name='username' placeholder="username">
+              <input type="email" name='email' placeholder="email">
+              <input type="text" name='first_name' placeholder="firstname">
+              <input type="text" name='last_name' placeholder="lastname">
+              <input type="password" name='password' placeholder="password">
+              <input type="password" name='passagain' placeholder="confirm password">
+              <input type="submit" value="Register">
+
+          </form>
+      </div>
+    </div>
+  </div>
+ </div>
+</div>
+
+{% endblock %}

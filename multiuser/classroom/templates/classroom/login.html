@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block bodyblock %}
+
+<div class="jumbotron">
+    <center><h2>Login Here</h2></center>
+ <div class="row">
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="card-body">
+          {% if error %}
+          {{ error }}
+          {% endif %}
+          <form method="post" novalidate>
+              {% csrf_token %}
+              {{ form.as_p }}
+              <input type="submit" value="Login">
+          </form>
+      </div>
+    </div>
+  </div>
+ </div>
+</div>
+
+{% endblock %}

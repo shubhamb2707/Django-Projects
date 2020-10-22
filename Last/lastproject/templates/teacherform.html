@@ -1,0 +1,12 @@
+<html><head>Teacher Registration form</head>
+<body>
+<center>
+<form method="post">
+  {% csrf_token %}
+  {{ uform.as_p }}
+  {{ tform.as_p }}
+  <button type="submit">Save changes</button>
+</form>
+</center>
+</body>
+</html>
